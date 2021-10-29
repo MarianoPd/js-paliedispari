@@ -34,8 +34,14 @@ function randNum(min, max){
 }
 
 function userWon(choice,num){
-    if(((choice === 'pari') && (num % 2) === 0) || ((choice === 'dispari') && (num % 2) != 0)) return true;
+    if(((choice === 'pari') && (isEven(num)) || ((choice === 'dispari') && !(isEven(num)) ))){
+        return true;
+    }
     //ha vinto l'utente
     return false;
     //ha vinto il pc
+}
+
+function isEven(num){
+    return num % 2 ? false : true;
 }
